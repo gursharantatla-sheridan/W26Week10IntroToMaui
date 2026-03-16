@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="W26Week10IntroToMaui.ToDoPage"
+             Title="ToDoPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+            <Entry x:Name="txtTask"
+                   Placeholder="Enter a new task"
+                   Completed="OnAddTaskClicked"/>
+
+            <Button x:Name="btnAddTask"
+                    Text="Add Task"
+                    Clicked="OnAddTaskClicked"/>
+
+            <ListView x:Name="lvTasks">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <HorizontalStackLayout>
+                                <CheckBox />
+                                <Label Text="{Binding}" 
+                                       VerticalOptions="Center" 
+                                       Margin="10,0" 
+                                       FontSize="20"/>
+                            </HorizontalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
