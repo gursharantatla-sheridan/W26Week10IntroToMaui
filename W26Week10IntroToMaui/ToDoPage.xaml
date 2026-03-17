@@ -13,10 +13,16 @@
                     Text="Add Task"
                     Clicked="OnAddTaskClicked"/>
 
-            <ListView x:Name="lvTasks">
-                <ListView.ItemTemplate>
+            <CollectionView x:Name="lvTasks">
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Execute">
+                                    <SwipeItem Text="Delete" BackgroundColor="Red" Invoked="OnDeleteTaskSwiped"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+
                             <HorizontalStackLayout>
                                 <CheckBox />
                                 <Label Text="{Binding}" 
@@ -24,10 +30,10 @@
                                        Margin="10,0" 
                                        FontSize="20"/>
                             </HorizontalStackLayout>
-                        </ViewCell>
+                        </SwipeView>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

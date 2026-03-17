@@ -21,4 +21,12 @@ public partial class ToDoPage : ContentPage
 			txtTask.Focus();
 		}
     }
+
+    private void OnDeleteTaskSwiped(object sender, EventArgs e)
+    {
+        if (sender is SwipeItem swipeItem && swipeItem.BindingContext is string task)
+        {
+            tasks.Remove(task);
+        }
+    }
 }
