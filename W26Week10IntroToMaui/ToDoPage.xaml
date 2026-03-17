@@ -13,7 +13,7 @@
                     Text="Add Task"
                     Clicked="OnAddTaskClicked"/>
 
-            <CollectionView x:Name="lvTasks">
+            <CollectionView x:Name="cvTasks">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <SwipeView>

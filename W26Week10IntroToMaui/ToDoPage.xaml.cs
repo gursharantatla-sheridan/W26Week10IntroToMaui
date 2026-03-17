@@ -9,7 +9,7 @@ public partial class ToDoPage : ContentPage
 	public ToDoPage()
 	{
 		InitializeComponent();
-		lvTasks.ItemsSource = tasks;
+		cvTasks.ItemsSource = tasks;
 	}
 
     private void OnAddTaskClicked(object sender, EventArgs e)
